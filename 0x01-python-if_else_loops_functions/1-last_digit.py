@@ -19,3 +19,6 @@ elif number < 0:
  is less than 6 and not 0")
     elif x == 0:
         print(f"Last digit of -{number:d} is 0 and is 0")
+
+elif number == 0:
+    print(f"Last digit of 0 is 0 and is 0")
