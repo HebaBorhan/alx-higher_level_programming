@@ -1,1 +1,5 @@
-#!/usr/bin/python3
+#include "lists.h"
+
+int check_cycle(listint_t *list)
+{
+}
