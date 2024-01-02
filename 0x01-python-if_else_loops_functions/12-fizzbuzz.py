@@ -8,4 +8,4 @@ def fizzbuzz():
         elif (i % 3) == 0:
             print(f"Buzz ", end='')
         else:
-            print(f"{i}")
+            print(f"{i} ", end='')
