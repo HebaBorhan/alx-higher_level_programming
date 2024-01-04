@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-from add_0 import add
+
+exec(open("./add_0.py").read())
 a = 1
 b = 2
 
