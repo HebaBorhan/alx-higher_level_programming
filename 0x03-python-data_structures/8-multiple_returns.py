@@ -5,9 +5,10 @@ def multiple_returns(sentence):
 
     length = len(str_tuple)
 
-    first = str_tuple[0]
+    if length > 0:
+        first = str_tuple[0]
 
-    if length == 0:
+    elif length == 0:
         first = None
 
     return length, first
