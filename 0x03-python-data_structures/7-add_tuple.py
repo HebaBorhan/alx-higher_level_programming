@@ -13,6 +13,12 @@ def add_tuple(tuple_a=(), tuple_b=()):
     if len(tuple_b) < 2:
         tuple_b = tuple_b + (0, 0)
 
+    if not tuple_a:
+        tuple_a = (0, 0)
+
+    if not tuple_b:
+        tuple_b = (0, 0)
+
     new_tuple = tuple(map(lambda i, j: i + j, tuple_a, tuple_b))
 
     return new_tuple
