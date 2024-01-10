@@ -2,7 +2,7 @@
 
 def square_matrix_simple(matrix=[]):
     if len(matrix) == 0 or len(matrix[0]) == 0:
-        return None
+        return matrix
 
     else:
         new_matrix = []
