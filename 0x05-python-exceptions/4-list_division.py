@@ -20,7 +20,6 @@ def list_division(my_list_1, my_list_2, list_length):
             result.append(0)
 
     finally:
-        for i in range(list_length):
-            print(result[i])
+        print(result)
 
     return result
