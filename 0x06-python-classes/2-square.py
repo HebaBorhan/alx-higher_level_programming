@@ -9,9 +9,9 @@ class Square:
         """Initialize the Square class with a given 'size' argument."""
 
         if not isinstance(size, int):
-            raise TypeError("Size must be an integer")
+            raise TypeError("size must be an integer")
 
         if size < 0:
-            raise ValueError("Size must be >= 0")
+            raise ValueError("size must be >= 0")
 
         self.__size = size
