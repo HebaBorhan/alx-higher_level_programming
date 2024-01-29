@@ -9,6 +9,7 @@ class Rectangle:
     class Rectangle that defines a rectangle by width and height
     """
     number_of_instances = 0
+    print_symbol = '#'
 
     def __init__(self, width=0, height=0):
         """Initialize Rectangle with width and height
@@ -16,6 +17,7 @@ class Rectangle:
         self.height = height
         self.width = width
         Rectangle.number_of_instances += 1
+        Rectangle.print_symbol
 
     @property
     def width(self):
@@ -55,7 +57,7 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return ""
         else:
-            rect = ("#" * self.__width + '\n') * self.__height
+            rect = (Rectangle.print_symbol * self.__width + '\n') * self.__height
             # Remove the extra newline character at the end
             return rect[:-1]
 
