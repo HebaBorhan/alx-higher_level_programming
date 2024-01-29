@@ -54,16 +54,16 @@ class Rectangle:
             return 2 * (self.__height + self.__width)
 
     def __str__(self):
-        if self.__width == 0 or self.__height == 0:
+        if self.width == 0 or self.height == 0:
             return ""
         else:
-            rect = (Rectangle.print_symbol * self.__width
-                    + '\n') * self.__height
+            rect = (str(self.print_symbol) * self.width
+                    + '\n') * self.height
             # Remove the extra newline character at the end
             return rect[:-1]
 
     def __repr__(self):
-        return "Rectangle({}, {})".format(self.__width, self.__height)
+        return "Rectangle({}, {})".format(str(self.width), str(self.height))
 
     def __del__(self):
         Rectangle.number_of_instances -= 1
