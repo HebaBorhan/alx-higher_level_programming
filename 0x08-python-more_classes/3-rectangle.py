@@ -52,4 +52,6 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return ""
         else:
-            return ("#" * self.__width + '\n') * self.__height
+            rect = ("#" * self.__width + '\n') * self.__height
+            # Remove the extra newline character at the end
+            return rect[:-1]
