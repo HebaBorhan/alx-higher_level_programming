@@ -84,5 +84,6 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
-        my_square = cls(width=size, height=size)
-        return my_square
+        if size >= 0:
+            my_square = cls(size, size)
+            return my_square
