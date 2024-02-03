@@ -12,7 +12,7 @@ def text_indentation(text):
     """
     if not isinstance(text, str):
         raise TypeError("text must be a string")
-    
+
     for delimiters in ".?:":
         text = (delimiters + "\n\n").join([line.strip(" ") for line
                                            in text.split(delimiters)])
