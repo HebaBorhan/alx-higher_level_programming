@@ -23,7 +23,7 @@ class BaseGeometry:
 class Square(BaseGeometry):
     """subclass Square."""
     def __init__(self, size):
-        """Initialize subclass Square."""
+        """Initialize the subclass Square."""
         super().__init__()
         self.integer_validator("size", size)
         self.__size = size
