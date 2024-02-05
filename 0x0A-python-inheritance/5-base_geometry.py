@@ -3,7 +3,7 @@
 
 
 class BaseGeometry:
-    """empty class SquBaseGeometry."""
+    """create empty class SquBaseGeometry."""
 
     pass
 
