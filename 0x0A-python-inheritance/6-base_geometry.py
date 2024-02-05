@@ -6,8 +6,7 @@ class BaseGeometry:
     """class BaseGeometry."""
 
     def __init__(self):
-        """Initialize the Square class with a given 'size' argument."""
-
+        """Initialize BaseGeometry Class."""
         pass
 
     def area(self):
