@@ -1,0 +1,11 @@
+The ``1-my_list`` module
+======================
+
+Using ``my_list``
+-------------------
+This file contains doctests for the my_list function.
+
+>>> MyList = __import__('1-my_list').MyList
+
+>>> my_list(1, 2)
+3
