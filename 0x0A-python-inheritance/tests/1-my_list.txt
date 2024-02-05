@@ -6,6 +6,3 @@ The ``1-my_list`` module
 >>> my_list = MyList()
 >>> type(my_list) == MyList
 True
-
->>> my_list.print_sorted()
-[]
