@@ -2,7 +2,7 @@
 """class Student module"""
 
 
-class Student:
+class Student():
     """Student class defines a student."""
     def __init__(self, first_name, last_name, age):
         self.first_name = first_name
@@ -10,4 +10,4 @@ class Student:
         self.age = age
 
     def to_json(self):
-        return Student.__dict__
+        return self.__dict__
