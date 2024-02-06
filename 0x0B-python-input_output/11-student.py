@@ -11,3 +11,11 @@ class Student():
 
     def to_json(self, attrs=None):
         return self.__dict__
+
+    def reload_from_json(self, json):
+        for key in list(self.__dict__.keys()):
+            if key not in json:
+                delattr(self, key)
+                for key, value in json.items():
+                    setattr(self, key, value)
+                    
