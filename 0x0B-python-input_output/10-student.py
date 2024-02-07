@@ -11,5 +11,11 @@ class Student():
 
     def to_json(self, attrs=None):
         """Return the attributes of an instance as a JSON string."""
-        if not attrs:
+        if attrs is None:
             return self.__dict__
+        
+        filter_attrs = {}
+        for attr in attrs:
+            if hasattr(self, attr):
+                filter_attrs[attr] = getattr(self, attr)
+        return filter_attrs
