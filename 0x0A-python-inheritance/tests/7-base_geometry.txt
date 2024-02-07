@@ -40,3 +40,13 @@ Exception: area() is not implemented
 Traceback (most recent call last):
     ...
 TypeError: age must be an integer
+
+>>> bg.integer_validator("age", (4,))
+Traceback (most recent call last):
+    ...
+TypeError: age must be an integer
+
+>>> bg.integer_validator("age", [3])
+Traceback (most recent call last):
+    ...
+TypeError: age must be an integer
