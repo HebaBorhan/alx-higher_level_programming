@@ -7,6 +7,10 @@ The ``1-my_list`` module
 >>> type(my_list) == MyList
 True
 
+>>> my_list = MyList()
+>>> isinstance(my_list, list)
+True
+
 my_list = MyList()
 assert issubclass(MyList, list)
 
