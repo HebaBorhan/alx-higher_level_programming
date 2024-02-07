@@ -10,5 +10,5 @@ lists = list(sys.argv[1:])
 
 try:
     data = load_from_json_file('add_item.json')
-except:
+except Exception:
     data = []
