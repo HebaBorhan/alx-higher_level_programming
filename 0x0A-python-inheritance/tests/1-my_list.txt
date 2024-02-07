@@ -10,3 +10,7 @@ True
 >>> my_list = MyList()
 >>> isinstance(my_list, list)
 True
+
+>>> my_list = MyList()
+>>> my_list.print_sorted()
+[]
