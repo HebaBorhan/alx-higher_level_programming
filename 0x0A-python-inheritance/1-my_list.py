@@ -11,7 +11,3 @@ class MyList(list):
 
     def print_sorted(self):
         print(sorted(self))
-
-if __name__ == "__main__":
-    my_list = MyList()
-    print(type(my_list) == MyList)
