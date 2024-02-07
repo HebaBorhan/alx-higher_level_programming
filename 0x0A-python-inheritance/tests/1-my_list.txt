@@ -7,8 +7,8 @@ The ``1-my_list`` module
 >>> type(my_list) == MyList
 True
 
->>> my_list = MyList()
+my_list = MyList()
 assert issubclass(MyList, list)
 
->>> my_list.append(5)
+my_list.append(5)
 assert my_list == [5]
