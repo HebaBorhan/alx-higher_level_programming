@@ -19,3 +19,7 @@ class Student():
             if hasattr(self, attr):
                 filter_attrs[attr] = getattr(self, attr)
         return filter_attrs
+
+    def reload_from_json(self, json):
+        for key, value in json.items():
+            setattr(self, key, value)
