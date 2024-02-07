@@ -4,11 +4,6 @@
 
 class BaseGeometry:
     """class BaseGeometry."""
-
-    def __init__(self):
-        """Initialize BaseGeometry class."""
-        pass
-
     def area(self):
         raise Exception("area() is not implemented")
 
@@ -25,7 +20,7 @@ class Rectangle(BaseGeometry):
     def __init__(self, width, height):
         """Initialize subclass Rectangle."""
         super().__init__()
-        self.integer_validator('width', width)
-        self.integer_validator('height', height)
+        self.integer_validator("width", width)
+        self.integer_validator("height", height)
         self.__width = width
         self.__height = height
