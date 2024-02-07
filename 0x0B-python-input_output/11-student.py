@@ -10,12 +10,12 @@ class Student():
         self.age = age
 
     def to_json(self, attrs=None):
-        return self.__dict__
+        """Return the attributes of an instance as a JSON string."""
+        if attrs is None:
+            return self.__dict__
 
-    def reload_from_json(self, json):
-        for key in list(self.__dict__.keys()):
-            if key not in json:
-                delattr(self, key)
-                for key, value in json.items():
-                    setattr(self, key, value)
-                    
+        filter_attrs = {}
+        for attr in attrs:
+            if hasattr(self, attr):
+                filter_attrs[attr] = getattr(self, attr)
+        return filter_attrs
