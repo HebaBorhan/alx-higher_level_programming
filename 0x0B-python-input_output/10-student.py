@@ -13,7 +13,7 @@ class Student():
         """Return the attributes of an instance as a JSON string."""
         if attrs is None:
             return self.__dict__
-        
+
         filter_attrs = {}
         for attr in attrs:
             if hasattr(self, attr):
