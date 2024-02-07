@@ -12,3 +12,6 @@ try:
     data = load_from_json_file('add_item.json')
 except Exception:
     data = []
+
+data.extend(lists)
+save_to_json_file(data, 'add_item.json')
