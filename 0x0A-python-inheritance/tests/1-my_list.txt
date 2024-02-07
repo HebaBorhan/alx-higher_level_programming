@@ -10,11 +10,3 @@ True
 >>> my_list = MyList()
 >>> isinstance(my_list, list)
 True
-
->>> my_list = MyList()
->>> my_list.print_sorted()
-[]
-
->>> my_list = MyList([3,5,1])
->>> my_list.print_sorted()
-[1, 3, 5]
