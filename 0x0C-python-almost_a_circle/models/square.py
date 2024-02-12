@@ -37,7 +37,7 @@ class Square(Rectangle):
     def update(self, *args, **kwargs):
         """Update the position and size of the Square."""
         if args:
-            attr_names = ["id", "width", "height", "x", "y"]
+            attr_names = ["id", "size", "x", "y"]
             for i, arg in enumerate(args):
                 setattr(self, attr_names[i], arg)
         else:
