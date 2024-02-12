@@ -28,17 +28,19 @@ class Rectangle(Base):
         if y < 0:
             raise ValueError("y must be >= 0")
 
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
 
     @property
     def width(self):
+        """rectangle width"""
         return self.__width
 
     @width.setter
     def width(self, value):
+        """width setter"""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value <= 0:
@@ -47,10 +49,12 @@ class Rectangle(Base):
 
     @property
     def height(self):
+        """rectangle height"""
         return self.__height
 
     @height.setter
     def height(self, value):
+        """height setter"""
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value <= 0:
@@ -59,10 +63,12 @@ class Rectangle(Base):
 
     @property
     def x(self):
+        """x for rectangle"""
         return self.__x
 
     @x.setter
     def x(self, value):
+        """x setter"""
         if not isinstance(value, int):
             raise TypeError("x must be an integer")
         if value < 0:
@@ -71,10 +77,12 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        """y for rectangle"""
         return self.__y
 
     @y.setter
     def y(self, value):
+        """y setter"""
         if not isinstance(value, int):
             raise TypeError("y must be an integer")
         if value < 0:
@@ -86,14 +94,17 @@ class Rectangle(Base):
         return self.__width * self.__height
 
     def display(self):
+        """Display the rectangle by #."""
         print('\n' * self.__y, end="")
         print(((" " * self.__x) + "#" * self.__width + '\n') * self.__height,
               end="")
 
     def __str__(self):
+        """printing rectangle sting"""
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height)
 
     def update(self, *args, **kwargs):
+        """Update the position and size of the rectangle."""
         if args:
             attr_names = ["id", "width", "height", "x", "y"]
             for i, arg in enumerate(args):
@@ -103,5 +114,6 @@ class Rectangle(Base):
                 setattr(self, key, value)
 
     def to_dictionary(self):
+        """Convert a Rectangle object into a dictionary."""
         return {'x': self.__x, 'y': self.__y, 'id': self.id,
                 'height': self.__height, 'width': self.__width}
