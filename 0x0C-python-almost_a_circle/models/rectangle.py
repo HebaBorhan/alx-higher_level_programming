@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 """rectangle module"""
-
-
 from models.base import Base
+
 
 class Rectangle(Base):
     """Rectangle class"""
@@ -65,13 +64,15 @@ class Rectangle(Base):
     def area(self):
         """Return the area of this rectangle."""
         return self.__width * self.__height
-    
+
     def display(self):
         print('\n' * self.__y, end="")
-        print(((" " * self.__x ) + "#" * self.__width + '\n') * self.__height, end="")
+        print(((" " * self.__x) + "#" * self.__width + '\n') * self.__height,
+              end="")
 
     def __str__(self):
-        return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}"
+        return f"[Rectangle]
+        ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}"
 
     def update(self, *args, **kwargs):
         if args:
@@ -83,4 +84,5 @@ class Rectangle(Base):
                 setattr(self, key, value)
 
     def to_dictionary(self):
-        return {'x': self.__x, 'y': self.__y, 'id': self.id, 'height': self.__height, 'width': self.__width}
+        return {'x': self.__x, 'y': self.__y, 'id': self.id,
+                'height': self.__height, 'width': self.__width}
