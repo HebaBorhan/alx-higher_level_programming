@@ -13,12 +13,12 @@ class Rectangle(Base):
             raise TypeError("width must be an integer")
         if width <= 0:
             raise ValueError("width must be > 0")
-    
+
         if not isinstance(height, int):
             raise TypeError("height must be an integer")
         if height <= 0:
             raise ValueError("height must be > 0")
-    
+
         if not isinstance(x, int):
             raise TypeError("x must be an integer")
         if x < 0:
@@ -101,7 +101,8 @@ class Rectangle(Base):
 
     def __str__(self):
         """printing rectangle sting"""
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height)
+        return "[Rectangle] ({}) {}/{} - {}/{}".\
+            format(self.id, self.__x, self.__y, self.__width, self.__height)
 
     def update(self, *args, **kwargs):
         """Update the position and size of the rectangle."""
