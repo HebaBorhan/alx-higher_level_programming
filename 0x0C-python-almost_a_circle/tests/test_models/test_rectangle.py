@@ -2,6 +2,8 @@
 """Unittest for Rectangle class
 """
 import unittest
+import io
+from contextlib import redirect_stdout
 from models.rectangle import Rectangle
 
 
@@ -65,13 +67,32 @@ class TestRectangle(unittest.TestCase):
     def test_display(self):
         # Test display
         r1 = Rectangle(2, 3, 2, 2)
-        r1.display()
+        expected_output = "\n\n  ##\n  ##\n  ##\n"
+        with io.StringIO() as buf, redirect_stdout(buf):
+            r1.display()
+        output = buf.getvalue()
+        self.assertEqual(output, expected_output)
+
         r2 = Rectangle(3, 2, 1, 0)
-        r2.display()
+        expected_output = " ###\n ###\n"
+        with io.StringIO() as buf, redirect_stdout(buf):
+            r2.display()
+        output = buf.getvalue()
+        self.assertEqual(output, expected_output)
+
         r3 = Rectangle(3, 2)
-        r3.display()
+        expected_output = "###\n###\n"
+        with io.StringIO() as buf, redirect_stdout(buf):
+            r3.display()
+        output = buf.getvalue()
+        self.assertEqual(output, expected_output)
+
         r4 = Rectangle(3, 2, 1)
-        r4.display()
+        expected_output = " ###\n ###\n"
+        with io.StringIO() as buf, redirect_stdout(buf):
+            r4.display()
+        output = buf.getvalue()
+        self.assertEqual(output, expected_output)
 
     def test_str(self):
         # Test string representation
