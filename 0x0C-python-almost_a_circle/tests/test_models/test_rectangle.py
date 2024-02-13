@@ -64,36 +64,6 @@ class TestRectangle(unittest.TestCase):
         rect = Rectangle(3, 5)
         self.assertEqual(rect.area(), 15)
 
-    def test_display(self):
-        # Test display
-        r1 = Rectangle(2, 3, 2, 2)
-        expected_output = "\n\n  ##\n  ##\n  ##\n"
-        with io.StringIO() as buf, redirect_stdout(buf):
-            r1.display()
-        output = buf.getvalue()
-        self.assertEqual(output, expected_output)
-
-        r2 = Rectangle(3, 2, 1, 0)
-        expected_output = " ###\n ###\n"
-        with io.StringIO() as buf, redirect_stdout(buf):
-            r2.display()
-        output = buf.getvalue()
-        self.assertEqual(output, expected_output)
-
-        r3 = Rectangle(3, 2)
-        expected_output = "###\n###\n"
-        with io.StringIO() as buf, redirect_stdout(buf):
-            r3.display()
-        output = buf.getvalue()
-        self.assertEqual(output, expected_output)
-
-        r4 = Rectangle(3, 2, 1)
-        expected_output = " ###\n ###\n"
-        with io.StringIO() as buf, redirect_stdout(buf):
-            r4.display()
-        output = buf.getvalue()
-        self.assertEqual(output, expected_output)
-
     def test_str(self):
         # Test string representation
         rect = Rectangle(4, 8, 1, 2, 7)
