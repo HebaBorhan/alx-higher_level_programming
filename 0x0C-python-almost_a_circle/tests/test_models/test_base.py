@@ -1,6 +1,4 @@
 import unittest
-import sys
-import os
 from models.base import Base
 
 
