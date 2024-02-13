@@ -62,6 +62,17 @@ class TestRectangle(unittest.TestCase):
         rect = Rectangle(3, 5)
         self.assertEqual(rect.area(), 15)
 
+    def test_display(self):
+        # Test display
+        r1 = Rectangle(2, 3, 2, 2)
+        r1.display()
+        r2 = Rectangle(3, 2, 1, 0)
+        r2.display()
+        r3 = Rectangle(3, 2)
+        r3.display()
+        r4 = Rectangle(3, 2, 1)
+        r4.display()
+
     def test_str(self):
         # Test string representation
         rect = Rectangle(4, 8, 1, 2, 7)
