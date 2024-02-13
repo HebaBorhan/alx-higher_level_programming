@@ -2,9 +2,9 @@
 """Unittest for Rectangle class
 """
 import unittest
+from models.rectangle import Rectangle
 import io
 from contextlib import redirect_stdout
-from models.rectangle import Rectangle
 
 
 class TestRectangle(unittest.TestCase):
