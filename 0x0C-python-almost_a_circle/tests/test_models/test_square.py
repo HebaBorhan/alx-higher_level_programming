@@ -76,11 +76,20 @@ class TestSquare(unittest.TestCase):
         s1 = Square(3, 1, 3, 3)
         self.assertEqual(str(s1), "[Square] (3) 1/3 - 3")
 
-
     def test_to_dictionary(self):
         # Test to_dictionary method
         s1 = Square(10, 2, 1, 9)
         self.assertEqual(s1.to_dictionary(), {'id': 9, 'x': 2, 'size': 10, 'y': 1})
+
+    def test_update(self):
+        # Test update method
+        s = Square(2)
+        s.update(5, 6, 7, 8, 9)
+        self.assertEqual(s.id, 5)
+        self.assertEqual(s.width, 6)
+        self.assertEqual(s.height, 6)
+        self.assertEqual(s.x, 7)
+        self.assertEqual(s.y, 8)
 
 if __name__ == '__main__':
     unittest.main()
