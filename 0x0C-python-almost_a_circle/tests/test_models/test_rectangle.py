@@ -32,7 +32,7 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(ValueError):
             Rectangle(0, 5)
         with self.assertRaises(ValueError):
-            Rectangle(-5, 0)
+            Rectangle(-5, 5)
 
     def test_height_validation(self):
         # Test height validation
@@ -41,7 +41,7 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(ValueError):
             Rectangle(5, 0)
         with self.assertRaises(ValueError):
-            Rectangle(-5, 0)
+            Rectangle(5, -5)
 
     def test_x_validation(self):
         # Test x validation
