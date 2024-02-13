@@ -28,16 +28,20 @@ class TestRectangle(unittest.TestCase):
     def test_width_validation(self):
         # Test width validation
         with self.assertRaises(TypeError):
-            Rectangle("invalid", 5)
+            Rectangle("alx", 5)
         with self.assertRaises(ValueError):
             Rectangle(0, 5)
+        with self.assertRaises(ValueError):
+            Rectangle(-5, 0)
 
     def test_height_validation(self):
         # Test height validation
         with self.assertRaises(TypeError):
-            Rectangle(5, "invalid")
+            Rectangle(5, "alx")
         with self.assertRaises(ValueError):
             Rectangle(5, 0)
+        with self.assertRaises(ValueError):
+            Rectangle(-5, 0)
 
     def test_x_validation(self):
         # Test x validation
