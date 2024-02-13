@@ -38,6 +38,10 @@ class TestSquare(unittest.TestCase):
             Square(5, 10, "alx")
         with self.assertRaises(ValueError):
             Square(5, 10, -1)
+        with self.assertRaises(TypeError):
+            Square(5, "alx")
+        with self.assertRaises(ValueError):
+            Square(5, -1)
 
     def test_y_validation(self):
         # Test y validation
