@@ -4,6 +4,7 @@
 import unittest
 from models.rectangle import Rectangle
 import io
+import os
 from contextlib import redirect_stdout
 
 
@@ -115,6 +116,48 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(rect.to_dictionary(), {'x': 2, 'y': 2, 'id': 10,
                                                  'height': 6, 'width': 4})
 
+    def test_create(self):
+        """Test creation of Rectangle instances."""
+        # Test create method with various attributes
+        rect1 = Rectangle.create(**{ 'id': 89 })
+        rect2 = Rectangle.create(**{ 'id': 89, 'width': 1 })
+        rect3 = Rectangle.create(**{ 'id': 89, 'width': 1, 'height': 2 })
+        rect4 = Rectangle.create(**{ 'id': 89, 'width': 1, 'height': 2, 'x': 3 })
+        rect5 = Rectangle.create(**{ 'id': 89, 'width': 1, 'height': 2, 'x': 3, 'y': 4 })
+
+        # Check if instances are created
+        self.assertIsInstance(rect1, Rectangle)
+        self.assertIsInstance(rect2, Rectangle)
+        self.assertIsInstance(rect3, Rectangle)
+        self.assertIsInstance(rect4, Rectangle)
+        self.assertIsInstance(rect5, Rectangle)
+
+    def test_save_to_file(self):
+        """Test save_to_file method."""
+        # Test save_to_file with different inputs
+        Rectangle.save_to_file(None)
+        self.assertTrue(os.path.exists("Rectangle.json"))
+        os.remove("Rectangle.json")
+
+        Rectangle.save_to_file([])
+        self.assertTrue(os.path.exists("Rectangle.json"))
+        os.remove("Rectangle.json")
+
+        Rectangle.save_to_file([Rectangle(1, 2)])
+        self.assertTrue(os.path.exists("Rectangle.json"))
+        os.remove("Rectangle.json")
+
+    def test_load_from_file(self):
+        """Test load_from_file method."""
+        # Test load_from_file when file doesn’t exist
+        rectangles = Rectangle.load_from_file()
+        self.assertEqual(rectangles, [])
+
+        # Test load_from_file when file exists
+        Rectangle.save_to_file([Rectangle(1, 2)])
+        rectangles = Rectangle.load_from_file()
+        self.assertTrue(len(rectangles) > 0)
+        os.remove("Rectangle.json")
 
 
 if __name__ == '__main__':
