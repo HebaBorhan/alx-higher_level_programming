@@ -3,6 +3,7 @@
 """
 import unittest
 from models.rectangle import Rectangle
+from models.base import Base
 import io
 import os
 from contextlib import redirect_stdout
@@ -158,6 +159,14 @@ class TestRectangle(unittest.TestCase):
         rectangles = Rectangle.load_from_file()
         self.assertTrue(len(rectangles) > 0)
         os.remove("Rectangle.json")
+
+    def test_to_json_string_empty_list(self):
+        """Test of Base.to_json_string([]) exists"""
+        self.assertEqual(Base.to_json_string([]), "[]")
+
+    def test_to_json_string_with_data(self):
+        """Test of Base.to_json_string([{ 'id': 12 }]) returning a string exists"""
+        self.assertIsInstance(Base.to_json_string([{ 'id': 12 }]), str)
 
 
 if __name__ == '__main__':
