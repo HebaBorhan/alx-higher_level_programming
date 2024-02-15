@@ -49,10 +49,10 @@ class Base:
         from models.rectangle import Rectangle
         from models.square import Square
 
-        if cls.__name__ is Rectangle:
+        if cls is Rectangle:
             dummy_instance = cls(1, 1)
 
-        elif cls.__name__ is Square:
+        elif cls is Square:
             dummy_instance = cls(1)
 
         else:
