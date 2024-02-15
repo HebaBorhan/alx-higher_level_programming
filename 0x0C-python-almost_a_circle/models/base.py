@@ -59,4 +59,3 @@ class Base:
             dummy_instance = None
         dummy_instance.update(**dictionary)
         return dummy_instance
-        
