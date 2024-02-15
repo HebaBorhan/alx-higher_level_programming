@@ -2,6 +2,7 @@ import unittest
 from models.square import Square
 from models.rectangle import Rectangle
 import io
+import os
 from contextlib import redirect_stdout
 
 
@@ -89,6 +90,53 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(s.size, 6)
         self.assertEqual(s.x, 7)
         self.assertEqual(s.y, 8)
+
+    def test_create_with_id(self):
+        """Test of Square.create(**{ 'id': 89 }) in Square exists"""
+        square = Square.create(**{ 'id': 89 })
+        self.assertIsInstance(square, Square)
+        self.assertEqual(square.id, 89)
+
+    def test_create_with_id_and_size(self):
+        """Test of Square.create(**{ 'id': 89, 'size': 1 }) in Square exists"""
+        square = Square.create(**{ 'id': 89, 'size': 1 })
+        self.assertIsInstance(square, Square)
+        self.assertEqual(square.id, 89)
+        self.assertEqual(square.size, 1)
+
+    def test_create_with_id_size_x(self):
+        """Test of Square.create(**{ 'id': 89, 'size': 1, 'x': 2 }) in Square exists"""
+        square = Square.create(**{ 'id': 89, 'size': 1, 'x': 2 })
+        self.assertIsInstance(square, Square)
+        self.assertEqual(square.id, 89)
+        self.assertEqual(square.size, 1)
+        self.assertEqual(square.x, 2)
+
+    def test_create_with_id_size_x_y(self):
+        """Test of Square.create(**{ 'id': 89, 'size': 1, 'x': 2, 'y': 3 }) in Square exists"""
+        square = Square.create(**{ 'id': 89, 'size': 1, 'x': 2, 'y': 3 })
+        self.assertIsInstance(square, Square)
+        self.assertEqual(square.id, 89)
+        self.assertEqual(square.size, 1)
+        self.assertEqual(square.x, 2)
+        self.assertEqual(square.y, 3)
+
+    def test_save_to_file(self):
+        """Test of Square.save_to_file(None) in Square exists"""
+        Square.save_to_file(None)
+        self.assertTrue(os.path.exists("Square.json"))
+        os.remove("Square.json")
+
+    def test_load_from_file(self):
+        """Test of Square.load_from_file() when file doesn’t exist exists"""
+        squares = Square.load_from_file()
+        self.assertEqual(squares, [])
+
+        """Test of Square.load_from_file() when file exists exists"""
+        Square.save_to_file([Square(1)])
+        squares = Square.load_from_file()
+        self.assertTrue(len(squares) > 0)
+        os.remove("Square.json")
 
 if __name__ == '__main__':
     unittest.main()
