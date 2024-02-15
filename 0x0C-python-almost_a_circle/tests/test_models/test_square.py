@@ -138,5 +138,14 @@ class TestSquare(unittest.TestCase):
         self.assertTrue(len(squares) > 0)
         os.remove("Square.json")
 
+    def test_save_to_file_with_empty_list(self):
+        """Test of Square.save_to_file([]) in Square exists"""
+        Square.save_to_file([])
+        self.assertTrue(os.path.exists("Square.json"))
+        with open("Square.json", "r") as file:
+            content = file.read()
+            self.assertEqual(content, "[]")
+        os.remove("Square.json")
+
 if __name__ == '__main__':
     unittest.main()
