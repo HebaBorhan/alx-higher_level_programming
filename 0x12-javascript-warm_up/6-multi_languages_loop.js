@@ -1,10 +1,10 @@
 #!/usr/bin/node
 
-const my_aray = ['C is fun', 'Python is cool', 'JavaScript is amazing'];
+const myAray = ['C is fun', 'Python is cool', 'JavaScript is amazing'];
 let i = 0;
-let length = my_aray.length;
+const length = myAray.length;
 
 while (i < length) {
-    console.log(my_aray[i]);
-    i++;
+  console.log(myAray[i]);
+  i++;
 }
