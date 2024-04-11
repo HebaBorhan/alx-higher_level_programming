@@ -1,14 +1,13 @@
 #!/usr/bin/node
 
-const a = process.argv[2];
-const b = process.argv[3];
-
-if (isNaN(a) || isNaN(b)) {
-  console.log('NaN');
-} else {
-  function add (a, b) {
-    return a + b;
+const add = (a, b) => {
+  if (isNaN(a) || isNaN(b)) {
+    console.log('NaN');
+  } else {
+    return parseInt(a) + parseInt(b);
   }
-  const result = add(parseInt(a), parseInt(b));
-  console.log(result);
-}
+};
+
+module.exports = {
+  add
+};
