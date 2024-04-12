@@ -1,8 +1,8 @@
 #!/usr/bin/node
 
-const Square = require('./5-square');
+const Square0 = require('./5-square');
 
-class Square1 extends Square {
+class Square extends Square0 {
   constructor (size) {
     super(size, size);
   }
@@ -11,11 +11,11 @@ class Square1 extends Square {
     if (c === undefined) {
       c = 'X';
     }
-    const row = 'c'.repeat(this.size);
+    const row = c.repeat(this.size);
     for (let i = 0; i < this.size; i++) {
       console.log(row);
     }
   }
 }
 
-module.exports = Square1;
+module.exports = Square;
