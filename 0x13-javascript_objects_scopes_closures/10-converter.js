@@ -2,7 +2,9 @@
 
 exports.converter = function (base) {
   function convert (n) {
-    if (n < base) {
+    if (n === 0) {
+      return '0';
+    } else if (n < base) {
       return n.toString();
     } else {
       return convert(Math.floor(n / base)) + (n % base).toString();
