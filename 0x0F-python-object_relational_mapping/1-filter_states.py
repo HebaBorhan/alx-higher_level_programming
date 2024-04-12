@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""lists all states with a name starting with N from database"""
+"""lists all states with name starting with N from database"""
 import MySQLdb
 import sys
 
@@ -13,7 +13,7 @@ if __name__ == '__main__':
                            charset="utf8")
     cur = conn.cursor()
     cur.execute(
-        "SELECT DISTINCT * FROM states WHERE NAME LIKE 'N%' ORDER BY id ASC")
+        "SELECT * FROM states WHERE NAME LIKE 'N%' ORDER BY id ASC")
     query_rows = cur.fetchall()
     for row in query_rows:
         print(row)
