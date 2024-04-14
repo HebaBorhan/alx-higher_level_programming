@@ -12,15 +12,16 @@ if __name__ == '__main__':
                            db=sys.argv[3],
                            charset="utf8")
     cur = conn.cursor()
-    query = """SELECT cities.id, cities.name, states.name
+    query = """SELECT cities.name
                FROM cities
                JOIN states ON cities.state_id = states.id
                WHERE states.name = %s
                ORDER BY cities.id ASC"""
     state_name = (sys.argv[4],)
     cur.execute(query, state_name)
-    query_rows = cur.fetchall()
-    for row in query_rows:
-        print(row)
+
+    cities = [row[0] for row in cur.fetchall()]
+    print(', '.join(cities))
+
     cur.close()
     conn.close()
