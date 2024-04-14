@@ -17,7 +17,7 @@ if __name__ == "__main__":
         State.name.like('%a%')).order_by(State.id).all()
     if a_states:
         for state in a_states:
-            print("{}: {}".format(State.id, State.name))
+            print("{}: {}".format(state.id, state.name))
     else:
         print("Nothing")
 
