@@ -2,7 +2,7 @@
 """class definition of a city"""
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
-from relationship_state import Base
+from relationship import Base
 from relationship_state import State
 
 
