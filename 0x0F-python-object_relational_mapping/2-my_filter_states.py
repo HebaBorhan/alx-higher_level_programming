@@ -12,9 +12,9 @@ if __name__ == '__main__':
                            db=sys.argv[3],
                            charset="utf8")
     cur = conn.cursor()
-    query = "SELECT * FROM states "
-    "WHERE BINARY name = '{}' ORDER BY id ASC".format(
-        sys.argv[4])
+    query = ("SELECT * FROM states "
+         "WHERE BINARY name = '{}' "
+         "ORDER BY id ASC").format(sys.argv[4])
     cur.execute(query)
     query_rows = cur.fetchall()
     for row in query_rows:
