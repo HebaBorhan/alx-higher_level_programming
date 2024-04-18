@@ -4,7 +4,7 @@ from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
 from relationship_city import City
-from relationship_city import Base 
+from relationship_city import Base
 
 
 class State(Base):
