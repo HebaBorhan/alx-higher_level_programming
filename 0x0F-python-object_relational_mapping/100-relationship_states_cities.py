@@ -7,22 +7,11 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 
-def create_tables(engine):
-    """Create tables if they do not exist"""
-    Base.metadata.create_all(engine)
-
-
 if __name__ == "__main__":
-    if len(sys.argv) != 4:
-        print("Usage: {} username password database".format(sys.argv[0]))
-        sys.exit(1)
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
+        sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
 
-    username, password, database = sys.argv[1], sys.argv[2], sys.argv[3]
-
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
-        username, password, database), pool_pre_ping=True)
-
-    create_tables(engine)
+    Base.metadata.create_all(engine)
 
     Session = sessionmaker(bind=engine)
     session = Session()
