@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """takes in a URL, sends a request to the URL
-and displays the body of the response"""
+and displays body of the response"""
 import urllib.request as request
 import urllib.error
 import sys
