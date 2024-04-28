@@ -8,10 +8,10 @@ import sys
 if __name__ == "__main__":
     url = sys.argv[1]
 
-    try:
-        response = requests.get(url)
-        print(response.text)
+    response = requests.get(url)
 
-    except requests.exceptions.RequestException as error:
-        if 400 <= error.code:
-            print("Error code: {}".format(error.code))
+    if response.status_code >= 400:
+            print("Error code: {}".format(response.status_code))
+    
+    else:
+        print(response.text)
