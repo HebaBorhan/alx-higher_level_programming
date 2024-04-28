@@ -12,6 +12,6 @@ if __name__ == "__main__":
 
     data = parse.urlencode({'email': email}).encode("ascii")
 
-    with request.urlopen(url, data=data) as response:
+    with request.urlopen(url, data) as response:
         decoded_body = response.read().decode("utf-8")
         print(decoded_body)
