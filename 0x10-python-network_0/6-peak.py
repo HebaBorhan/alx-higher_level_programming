@@ -3,13 +3,14 @@
 
 
 def find_peak(list_of_integers):
-    """This function finds peak in a list of unsorted integers"""
-    # Initialize variables to keep track of the current minimum value
-    min_val = float('inf')
-    max_val = None
-    for i, num in enumerate(list_of_integers):
-        if num < min_val:
-            min_val = num
-        elif not max_val or num > max.value:
-            max_val = (i, num)
-    return max_val[0]
+    """This function finds peak in a list of unsorted int."""
+    if not list_of_integers:
+        return None
+    low, high = 0, len(list_of_integers) - 1
+    while low < high:
+        mid = (low + high) // 2
+        if list_of_integers[mid] < list_of_integers[mid + 1]:
+            low = mid + 1
+        else:
+            high = mid
+    return list_of_integers[low]
